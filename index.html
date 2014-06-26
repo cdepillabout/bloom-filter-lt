@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Bloom Filter LT</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Bloom Filter LT</title>
 
-    <meta name="author" content="Dennis Gosnell" />
+	<meta name="author" content="Dennis Gosnell" />
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
-    <link href="css/impress-demo.css" rel="stylesheet" />
+	<link href="css/impress-demo.css" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="css/highlight-default.min.css">
-		<script src="js/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="css/highlight-default.min.css">
+	<script src="js/highlight.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/murmurhash.js"></script>
+	<script src="js/mystuff.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body class="impress-not-supported">
@@ -70,12 +73,71 @@
     <div class="step title" data-x="4000" data-y="0">
 			<div class="centerdiv">
 				<h1>・・・ん？</h1>
-				<!--
-					参加したい方いませんか？
-					回答者募集します！やりたい人！
-				-->
 			</div>
     </div>
+
+    <div class="step title" data-x="6000" data-y="0">
+			<div class="centerdiv">
+				<h2>簡単に説明する</h2>
+			</div>
+    </div>
+
+    <div class="step title" data-x="7000" data-y="0">
+			<div class="centerdiv">
+				<h2>ビットベクター</h2>
+
+				<div class="insetbox">
+					<table class="bitvector" border="1" cellpadding="0" cellspacing="0"><tbody>
+						<tr class="bits"></tr>
+						<tr class="labels"></tr>
+					</tbody></table>
+				</div>
+
+			</div>
+    </div>
+
+    <div class="step title" data-x="9000" data-y="0">
+			<div class="centerdiv">
+				<h2>ハッシュの関数</h2>
+				<h3 style="margin-top: 50px;">２つか３つが必要</h3>
+				<h3 style="margin-top: 50px;">例えば：md5とsha1</h3>
+			</div>
+    </div>
+
+    <div class="step title" data-x="10200" data-y="0">
+			<div class="centerdiv">
+				<h3>単純に</h3>
+				<ul>
+					<li>ハッシュしたい文字列をハッシュ関数に渡して</li>
+					<li>結果を14にmodして</li>
+					<li>ビットベクターに入れる</li>
+				</ul>
+			</div>
+    </div>
+
+    <div class="step title" data-x="11500" data-y="0">
+			<div class="centerdiv">
+				<h2>例</h2>
+
+				<div class="insetbox">
+					<table class="bitvector" border="1" cellpadding="0" cellspacing="0"><tbody>
+						<tr class="bits"></tr>
+						<tr class="labels"></tr>
+					</tbody></table>
+				</div>
+
+				<div class="insetbox" id="addstring">
+					<p>Enter a string: <input id="addtoset"><input type="submit" value="add to bloom filter" id="hash"></p>
+					<div id="hashes">
+						md5: <span id="fnv"></span><br>
+						sha1: <span id="murmur"></span>
+					</div>
+					<p>Your set: [<span id="yourset"></span>]</p>
+				</div>
+
+			</div>
+    </div>
+
 
 
     <div class="step title" data-x="200" data-y="5000" data-rotate="90" data-scale="5">
@@ -112,6 +174,7 @@ stripped
 			</div>
     </div>
 
+		<!--
     <div class="step problem" data-x="3500" data-y="-850" data-rotate="270" data-scale="5">
 			<div class="centerdiv">
 				<h2>実行してみる</h2>
@@ -119,7 +182,9 @@ stripped
 enter the passcode: </pre>
 			</div>
     </div>
+		-->
 
+		<!--
     <div class="step problem" data-x="7500" data-y="-850" data-rotate="270" data-scale="5">
 			<div class="centerdiv">
 				<h2>パスコードを入れてみる</h2>
@@ -129,7 +194,9 @@ Incorrect... :-(
 <code class="bash">$</code></pre>
 			</div>
     </div>
+		-->
 
+		<!--
     <div class="step problem" data-x="11500" data-y="-850" data-rotate="270" data-scale="5">
 			<div class="centerdiv">
 				<h2>問②</h2>
@@ -137,6 +204,7 @@ Incorrect... :-(
 				<p>実行可能ファイル内の<span style="color: blue;"><b>表示可能な文字列</b></span>を表示するコマンドは何ですか？</p>
 			</div>
     </div>
+		-->
 
     <div class="step problem" data-x="16500" data-y="-850" data-rotate="270" data-scale="5">
 			<div class="centerdiv">

@@ -299,6 +299,16 @@ a:focus {
 	vertical-align: center;
 }
 
+.title h3 {
+	display: block;
+	font-size: 50px;
+	line-height: 50px;
+
+	/*margin-top: 100px;*/
+	text-align: center;
+	vertical-align: center;
+}
+
 .title ul {
     list-style: disc outside none;
 	margin-left: 30px;
@@ -336,6 +346,38 @@ a:focus {
     First is the title step with a big <h1> (no room for padding) and some
     3D positioning along Z axis.
 */
+
+/* bitvector */
+.insetbox {
+	background-color: #F1F1CE;
+	border-radius: 10px 10px 10px 10px;
+	margin-top: 50px;
+	padding: 10px;
+	width: 900px;
+	font-size: 27px;
+}
+table.bitvector {
+	background-color: #FFFFFF;
+	border-collapse: collapse;
+	border-color: #333333;
+	border-spacing: 0;
+	border-style: none;
+	border-width: 1px;
+	margin: auto;
+}
+table.bitvector td {
+	background-color: #FFFFFF;
+	border-color: #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
+	padding: 15px;
+}
+.bitvector .bloomactive {
+	background-color: #008000 !important;
+}
+.bitvector .set {
+	background-color: #000000 !important;
+}
 
 #title1 {
     padding: 0;
