@@ -56,6 +56,7 @@
 			<div class="centerdiv-in-slide">
         <h1>Bloom Filters</h1>
 				<p><a href="https://github.com/cdepillabout">Dennis Gosnell</a></p>
+				<p><small style="font-size: 24px;">code borrowed from <a href="http://billmill.org/bloomfilter-tutorial/">Bill Mill</a></small</p>
 			</div>
     </div>
 
@@ -138,15 +139,73 @@
 			</div>
     </div>
 
+    <div class="step title" data-x="13000" data-y="0">
+			<div class="centerdiv">
+				<h2>ブルームフィルターどこで使える？</h2>
+			</div>
+    </div>
 
+    <div class="step title" data-x="14500" data-y="0">
+			<div class="centerdiv">
+				<h2>使えるところ</h2>
+				<ul>
+					<li>DBに接続する前に、探しているデータが<b>あるかどうか</b>高速にチェック</li>
+				</ul>
+			</div>
+    </div>
 
+    <div class="step title" data-x="16000" data-y="0">
+			<div class="centerdiv">
+				<h3>PXサーバ</h3>
+				<ul>
+					<li>a8matが渡される</li>
+					<li>a8matをデコード</li>
+					<li>a8matの中の<b>広告素材ID</b>を使ってMongoにqueryを投げる</li>
+					<li>該当するデータがなかったらcoredaに飛ばす</li>
+				</ul>
+			</div>
+    </div>
+
+    <div class="step title" data-x="17500" data-y="0">
+			<div class="centerdiv">
+				<h3>PXサーバ + </br>ブルームフィルター 1</h3>
+				<ul>
+					<li>a8matが渡される</li>
+					<li>a8matをデコード</li>
+					<li>a8matの中の<b>広告素材ID</b>をハッシュしてブルームフィルターにqueryを投げる</li>
+				</ul>
+			</div>
+    </div>
+
+    <div class="step title" data-x="19000" data-y="0">
+			<div class="centerdiv">
+				<h3>PXサーバ + ブルームフィルター 2</h3>
+				<ul>
+					<li>ビットが<i>立っていなければ</i>、該当するデータは<b>かならずMongoにない</b>ので即座にcoredaに飛ばす</li>
+					<li>ビットが<i>立っていれば</i>、該当するデータがMongoにあるかもしれないのでMongoにqueryを投げる</li>
+				</ul>
+			</div>
+    </div>
+
+    <div class="step title" data-x="21000" data-y="0">
+			<div class="centerdiv">
+				<h3>要するに</h3>
+				<ul>
+					<li>Mongoに<b>接続しなくても</b>探しているデータが入っているかどうかはすぐ分かる</li>
+				</ul>
+			</div>
+    </div>
+
+    <div class="step title" data-x="10000" data-y="3000" data-z="10" data-rotate="0" data-scale="10">
+			<div class="centerdiv">
+				<p style="text-align: center; font-size: 190px;">fin</p>
+			</div>
+    </div>
+
+		<!--
     <div class="step title" data-x="200" data-y="5000" data-rotate="90" data-scale="5">
 			<div class="centerdiv">
 				<h1>クイズ対決！！</h1>
-				<!--
-					参加したい方いませんか？
-					回答者募集します！やりたい人！
-				-->
 			</div>
     </div>
 
@@ -154,12 +213,11 @@
 			<div class="centerdiv">
 				<h2>問①</h2>
 				<p>以下のファイルがあります。どういうファイルか知りたいとき、<b>何のコマンド</b>を使いますか。</p>
-				<pre><code class="bash">$ ls -l crackme</code>
--rwx------ 1 me user 8293 May 29 crackme
-<code class="bash">$</code></pre>
 			</div>
     </div>
+		-->
 
+		<!--
     <div class="step problem" data-x="-8000" data-y="5000" data-rotate="90" data-scale="5">
 			<div class="centerdiv">
 				<h2>答①</h2>
@@ -170,9 +228,9 @@ version 1 (SYSV), dynamically linked (uses
 shared libs), for GNU/Linux 2.6.26, not
 stripped
 <code class="bash">$</code></pre>
-				<!-- 実行可能ファイル！！ -->
 			</div>
     </div>
+		-->
 
 		<!--
     <div class="step problem" data-x="3500" data-y="-850" data-rotate="270" data-scale="5">
@@ -206,6 +264,7 @@ Incorrect... :-(
     </div>
 		-->
 
+		<!--
     <div class="step problem" data-x="16500" data-y="-850" data-rotate="270" data-scale="5">
 			<div class="centerdiv">
 				<h2>答②</h2>
@@ -223,7 +282,9 @@ Incorrect... :-(
 <code class="bash">$</code></pre>
 			</div>
     </div>
+		-->
 
+		<!--
     <div class="step problem" data-x="-3500" data-y="11000" data-rotate="0" data-scale="7">
 			<div class="centerdiv">
 				<h2>問題③</h2>
@@ -257,6 +318,7 @@ enter the passcode: thisisthepasscode
 <code class="bash">$</code></pre>
 			</div>
     </div>
+		-->
 
 		<!--
     <div class="step problem" data-x="-100000" data-y="-100000" data-z="10" data-rotate="0" data-scale="2000">
